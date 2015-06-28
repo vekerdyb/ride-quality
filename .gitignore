@@ -7,9 +7,6 @@ resources/
 www/
 coverage/
 
-protractor/selenium-server-standalone.jar
-protractor/chromedriver
-
 # IDE
 .idea/
 

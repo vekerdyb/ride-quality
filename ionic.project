@@ -1,5 +1,5 @@
 {
-  "name": "ionic-seed",
+  "name": "ride-quality",
   "app_id": "",
   "documentRoot": "www",
   "gulpStartupTasks": ["watch"]

@@ -1,7 +1,11 @@
 {
-  "name": "ionic-seed",
+  "name": "ride-quality",
   "version": "1.0.0",
-  "description": "ionic-seed: An Ionic project",
+  "description": "ride-quality: Crowd-sourced bicycle road quality measurements and info.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vekerdyb/ride-quality.git"
+  },
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^1.3.3",
