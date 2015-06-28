@@ -2,7 +2,7 @@
 
   class RecordController {
     constructor($cordovaDeviceMotion, Measurement, MeasurementsHelper, Popup) {
-      let options = {frequency: 1000 / 25};
+      this.options = {frequency: 1000 / 25};
       this.running = false;
       this.buttonText = "Start recording";
       this.$cordovaDeviceMotion = $cordovaDeviceMotion;
@@ -12,6 +12,7 @@
     }
 
     measurementSaved(result) {
+      console.log(`saved ${result}`);
     }
 
     measurementSaveFailed(error) {
@@ -45,6 +46,7 @@
             this.measurementReceived.bind(this)
           );
         } catch (e) {
+          console.error(e);
           this.Popup.error('The sensor data cannot be read', this.stop.bind(this));
         }
       }
