@@ -1,5 +1,5 @@
 (() => {
-  angular.module('starter.tabs', [
-    'starter.tabs.routing'
+  angular.module('riqu.tabs', [
+    'riqu.tabs.routing'
   ])
 })();

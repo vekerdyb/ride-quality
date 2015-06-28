@@ -1,4 +1,4 @@
-angular.module("starter.config", [])
+angular.module("riqu.config", [])
 
 .constant("config", {
 	"configName": "local",

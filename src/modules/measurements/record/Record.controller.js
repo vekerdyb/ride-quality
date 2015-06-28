@@ -1,13 +1,13 @@
 (() => {
 
   class RecordController {
-    constructor($cordovaDeviceMotion, Measurement, MeasurementHelper, Popup) {
+    constructor($cordovaDeviceMotion, Measurement, MeasurementsHelper, Popup) {
       let options = {frequency: 1000 / 25};
       this.running = false;
       this.buttonText = "Start recording";
       this.$cordovaDeviceMotion = $cordovaDeviceMotion;
       this.Measurement = Measurement;
-      this.MeasurementHelper = MeasurementHelper;
+      this.MeasurementsHelper = MeasurementsHelper;
       this.Popup = Popup;
     }
 
@@ -34,7 +34,7 @@
 
     toggleWatch() {
       if (this.running) {
-        this.stop(this.watch);
+        this.stop();
       } else {
         let id = this.start();
         try {
@@ -45,8 +45,7 @@
             this.measurementReceived.bind(this)
           );
         } catch (e) {
-          this.Popup.error('The sensor data cannot be read');
-          this.stop();
+          this.Popup.error('The sensor data cannot be read', this.stop.bind(this));
         }
       }
 
@@ -58,14 +57,14 @@
     }
 
     start() {
-      var newId = this.MeasurementHelper.getNewId();
+      var newId = this.MeasurementsHelper.getNewId();
       this.Measurement.start(newId).then(
         this.recordingStarted.bind(this)
       );
       return newId;
     }
 
-    stop(watch) {
+    stop() {
       this.buttonText = "Start recording";
       this.running = false;
       if (angular.isDefined(this.watch)) {
@@ -77,7 +76,7 @@
   RecordController.$inject = [
     '$cordovaDeviceMotion',
     'Measurement',
-    'MeasurementHelper',
+    'MeasurementsHelper',
     'Popup'
   ];
 

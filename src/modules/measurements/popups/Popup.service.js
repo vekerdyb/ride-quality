@@ -2,19 +2,22 @@
 
   function Popup($ionicPopup) {
     return {
-      error(message) {
-        var alertPopup = $ionicPopup.alert({
+      error(message, fn) {
+        let alertPopup = $ionicPopup.alert({
           title: 'An error has occured.',
           template: message
         });
-        alertPopup.then(function (res) {
+        return alertPopup.then((res) => {
+          if (angular.isDefined(fn)) {
+            fn();
+          }
           console.log('The user has been alerted: ', message);
         });
       }
     }
   }
 
-  MeasurementsHelper.$inject = [
+  Popup.$inject = [
     '$ionicPopup'
   ];
 

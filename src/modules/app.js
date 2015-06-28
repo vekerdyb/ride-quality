@@ -9,10 +9,8 @@ angular.module('riqu', [
   'ionic',
   'riqu.config',
   'riqu.measurements',
-  'starter.tabs',
-  'starter.dash',
-  'starter.chats',
-  'starter.account'
+  'riqu.logs',
+  'riqu.tabs'
 ])
 
   .run(($ionicPlatform) => {
@@ -31,7 +29,7 @@ angular.module('riqu', [
 
   .config(($urlRouterProvider) => {
     // if none of the states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('/tab/record');
 
   })
 

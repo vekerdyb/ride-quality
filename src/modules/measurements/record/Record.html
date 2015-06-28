@@ -1,0 +1,12 @@
+<ion-view view-title="Dashboard">
+    <ion-content class="padding">
+        <button class="button button-block"
+                ng-class="{'button-positive' : !record.running, 'button-assertive' : record.running}"
+                ng-click="record.toggleWatch()">
+            {{ record.buttonText }}
+        </button>
+        <div class="row" ng-repeat="coordinate in ['x', 'y', 'z']">
+            <div class="col col-25">{{ coordinate | uppercase}}</div><div class="col">{{ record.currentAcceleration[coordinate] }}</div>
+        </div>
+    </ion-content>
+</ion-view>

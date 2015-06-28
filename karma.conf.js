@@ -6,6 +6,7 @@ module.exports = {
     {pattern: 'bower_components/angular/angular.js', watch: false},
     {pattern: 'bower_components/ionic/js/ionic.bundle.js', watch: false},
     {pattern: 'bower_components/angular-mocks/angular-mocks.js', watch: false},
+    {pattern: 'bower_components/angular-locker/dist/angular-locker.js', watch: false},
 
     //{pattern: 'bower_components/**/*.js', watch: false},
     //{pattern: 'src/lib/**/*.js', watch: false},

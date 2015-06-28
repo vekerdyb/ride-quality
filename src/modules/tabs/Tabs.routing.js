@@ -15,6 +15,6 @@
     'ionic'
   ];
 
-  angular.module('starter.tabs.routing', dependencies)
+  angular.module('riqu.tabs.routing', dependencies)
     .config(TabsRouting)
 })();
