@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+
+.docs {
+    font-size: 3em;
+    font-weight: 100;
+    margin: 0 .5em;
+}
+
+.yellow {
+    background-color: yellow;
+}
