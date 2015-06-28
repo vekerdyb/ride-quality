@@ -15,8 +15,8 @@ angular.module('riqu', [
   'starter.account'
 ])
 
-  .run(function ($ionicPlatform) {
-    $ionicPlatform.ready(function () {
+  .run(($ionicPlatform) => {
+    $ionicPlatform.ready(() => {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -29,8 +29,20 @@ angular.module('riqu', [
     });
   })
 
-  .config(function ($urlRouterProvider) {
+  .config(($urlRouterProvider) => {
     // if none of the states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/tab/dash');
 
-  });
+  })
+
+  .config(['lockerProvider', (lockerProvider) => {
+    lockerProvider.defaults({
+      driver: 'local',
+      namespace: 'riqu',
+      separator: '.',
+      eventsEnabled: true,
+      extend: {}
+    });
+  }])
+
+;

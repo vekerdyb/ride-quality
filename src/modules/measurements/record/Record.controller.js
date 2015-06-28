@@ -85,7 +85,7 @@
     'ngCordova',
     'riqu.measurements.service',
     'riqu.measurements.helper.service',
-    'riqu.popup.service'
+    'riqu.popups.service'
   ];
 
   angular.module('riqu.measurements.record.controller', dependencies)
